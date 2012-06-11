@@ -23,15 +23,12 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.Query;
-import javax.transaction.UserTransaction;
+import java.util.List;
 
 public class ManagedBeanUserDao implements UserDao {
 
     @Inject
     private EntityManager entityManager;
-
-    @Inject
-    private UserTransaction utx;
 
     @Transactional
     public User getForUsername(String username) {
@@ -47,6 +44,9 @@ public class ManagedBeanUserDao implements UserDao {
     @Transactional
     public void createUser(User user) {
         entityManager.persist(user);
+    }
 
+    public List<User> getAllUsers() {
+        return entityManager.createQuery("from User u order by u.username").getResultList();
     }
 }

@@ -115,6 +115,12 @@ as the API is included in JBoss AS 7 -->
             <version>64</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -184,6 +190,14 @@ as the API is included in JBoss AS 7 -->
             <id>softwaremill-releases</id>
             <name>SoftwareMill Releases</name>
             <url>http://tools.softwaremill.pl/nexus/content/repositories/releases</url>
+        </repository>
+
+        <!-- Primefaces -->
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
         </repository>
     </repositories>
 

@@ -16,8 +16,12 @@
  */
 package org.jboss.as.quickstarts.greeter.domain;
 
+import java.util.List;
+
 public interface UserDao {
    User getForUsername(String username);
 
    void createUser(User user);
+
+    List<User> getAllUsers();
 }
